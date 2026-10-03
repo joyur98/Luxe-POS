@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"Default capabilities for Luxe POS desktop app","local":true,"windows":["main"],"permissions":["core:default","shell:allow-execute","shell:allow-kill","shell:allow-stdin-write","dialog:default","fs:default"],"platforms":["linux","macOS","windows"]}}

@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #FAF9F6;
+  color: #221F1C;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #F1E7D6;
+}
+
+/* Thin, quiet scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E6E1D6;
+  border-radius: 999px;
+  border: 2px solid #FAF9F6;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D8D1C1;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+:focus-visible {
+  outline: 2px solid #8A6A42;
+  outline-offset: 1px;
+}
+
+/* Receipt printing: the printable receipt is always mounted off-screen
+   to the left, and only becomes visible (and the only thing visible)
+   once a print job is triggered via PrintContext. */
+.print-area {
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  width: 320px;
+  background: #fff;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  @page {
+    margin: 8mm;
+  }
+}

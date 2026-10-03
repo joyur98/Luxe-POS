@@ -1,0 +1,27 @@
+{
+  "name": "luxe-pos-server",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "pkg": {
+    "scripts": "index.js",
+    "assets": [
+      "schema.sql"
+    ],
+    "targets": [
+      "node18-win-x64"
+    ],
+    "output": "../src-tauri/binaries/server-x86_64-pc-windows-msvc.exe"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  }
+}

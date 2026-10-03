@@ -1,0 +1,12 @@
+{
+  "pkg": {
+    "scripts": "index.js",
+    "assets": [
+      "schema.sql"
+    ],
+    "targets": [
+      "node18-win-x64"
+    ],
+    "outputPath": "../src-tauri/binaries"
+  }
+}
